@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attack On Titan Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        .question {
+            margin-bottom: 15px;
+            text-align: center;
+
+        }
+        .center {
+             display: block;
+             margin-left: auto;
+             margin-right: auto;
+            width: 25%;
+            } 
+        footer {
+            background-color: orange;
+            color:aliceblue;
+            position:relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+
+ 
+</head>
+<header>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <img src="gi.jpg" alt="logo" style="width: 64px;">   
+  </a>  
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" 
+          data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+  <ul class="navbar-nav">
+    <li class="nav-item ">
+      <a class="nav-link" href="home.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="about.html">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="dbz.html">Dragon Ball</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="aot.html">Attack On Titan</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="naruto.html">Naruto</a>
+    </li>
+  </ul>
+  </div>  
+</nav> 
+    </header>
+<body>
+
+<h2 style = "text-align: center;">Attack on Titan Quiz</h2> <!--User interactable quiz-->
+<img src="https://coolthemestores.com/wp-content/uploads/2020/12/attack-on-titan-wallpaper-background.jpg" class="center" alt="Eren and Levi">
+
+
+<form id="quizForm" onsubmit="return checkAnswers()">
+    <div class="question">
+        <p>1. Who is the Attack Titan?</p>
+        <label>
+            <input type="radio" name="q1" value="Eren"> Eren
+        </label>
+        <label>
+            <input type="radio" name="q1" value="Mikasa"> Mikasa
+        </label>
+        <label>
+            <input type="radio" name="q1" value="Armin"> Armin
+        </label>
+    </div>
+
+    <div class="question">
+        <p>2. Whats beyond the walls?</p>
+        <label>
+            <input type="radio" name="q2" value="Endless Titans"> Endless Titans
+        </label>
+        <label>
+            <input type="radio" name="q2" value="Only Ocean"> Only Ocean
+        </label>
+        <label>
+            <input type="radio" name="q2" value="Other Humans"> Other Humans
+        </label>
+    </div>
+
+  <div class="question">
+      <p>3. Who isn't a Titan Shifter?</p>
+      <label>
+          <input type="radio" name="q3" value="Levi"> Levi
+      </label>
+      <label>
+          <input type="radio" name="q3" value="Armin"> Armin
+      </label>
+      <label>
+          <input type="radio" name="q3" value="Annie"> Annie
+      </label>
+  </div>
+
+    <div class="question">
+        <p>4. Eren obtains the Founding Titan from who?</p>
+      <label>
+          <input type="radio" name="q4" value="Ymir"> Ymir
+      </label>
+      <label>
+          <input type="radio" name="q4" value="Erwin"> Erwin
+      </label>
+      <label>
+          <input type="radio" name="q4" value="Historia"> Historia
+      </label>
+    </div>
+
+  <div class="question">
+      <p>5. How many Titan Shifters are there?</p>
+      <label>
+          <input type="radio" name="q5" value="7"> 7
+      </label>
+      <label>
+          <input type="radio" name="q5" value="8"> 8
+      </label>
+      <label>
+          <input type="radio" name="q5" value="9"> 9
+      </label>
+  </div>
+
+    <button type="submit" class = "center">Submit</button>
+</form>
+
+<script>
+    function checkAnswers() {
+        var score = 0;
+
+        // Question 1
+        if (document.getElementById('quizForm').elements['q1'].value === 'Eren') {
+            score++;
+        }
+
+        // Question 2
+        if (document.getElementById('quizForm').elements['q2'].value === 'Other Humans') {
+            score++;
+        }
+
+        // Question 3
+        if (document.getElementById('quizForm').elements['q3'].value === 'Levi') {
+            score++;
+        }
+
+      // Question 4
+      if (document.getElementById('quizForm').elements['q4'].value === 'Ymir') {
+          score++;
+      }
+
+      // Question 5
+      if (document.getElementById('quizForm').elements['q5'].value === '9') {
+          score++;
+      }
+
+        alert('Your score: ' + score + '/5');
+        return false; // Prevents the form from submitting
+    }
+</script>
+<footer>
+    <p align="center"> Copyright &copy 2023 TestYourAnime </p>
+    <p align="center">Email: whitakerd2@mail.montclair.edu</p>
+</footer>
+</body>
+</html>
